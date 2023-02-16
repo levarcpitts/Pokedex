@@ -5,6 +5,7 @@ import PokemonPage from './Components/PokemonPage';
 import axios from 'axios';
 import { Modal } from 'react-bootstrap';
 import './styles/style.css'
+import arrow from './images/pagearrow.png'
 
 
 function App() {
@@ -29,7 +30,6 @@ const setUpPokemon=async()=>{
 const getPokemon=async(res)=>{
   res.map(async(item)=>{
      const result=await axios.get(item.url)
-     console.log(result.data.name)
      setPokemon(state=>{
          state=[...state,result.data]
          state.sort((a,b)=>a.id>b.id?1:-1)
@@ -56,12 +56,12 @@ const handleShow = () => setShow(true);
                         {  prevPageUrl && <button onClick={()=>{
                             setPokemon([])
                             setcurrentPageUrl(prevPageUrl) 
-                        }}>Previous</button>}
+                        }}><img src={arrow} id='page_button' className='prev_button' /></button>}
 
                         { nextPageUrl && <button onClick={()=>{
                             setPokemon([])
                             setcurrentPageUrl(nextPageUrl)
-                        }}>Next</button>}
+                        }}><img src={arrow} id='page_button' className='next_button' /></button>}
 
                     </div>
             
