@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 import '../styles/style.css'
 
 export default function PokemonPage({data, show, handleClose}) {
-let type = '';
-  let color = '';
-              
+  
+
+ const getColor=(type)=>{  
+  let color = '';          
   if (type === 'grass'){
     color = '#7AC74C'
   } else if ( type === 'fire'){
@@ -46,9 +47,7 @@ let type = '';
   }else{
     color = null
   }
-
-console.log(data)
-
+ }
 
   return (
     <>

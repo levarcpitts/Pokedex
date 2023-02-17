@@ -54,15 +54,23 @@ export default function PokemonList({ pokemon, loading, infoPokemon}) {
   }else{
     color = null
   }
+
+  // const text_size = 'h2'
+  // if(item.name === 'mr-mime'){
+    // text_size = 'h3'
+  // }
                 return (
                     <>
                         <div key={item.id} onClick={()=>infoPokemon(item)} className='list_label' style={{backgroundColor: `${color}`}}>
                           
                             <div className='list_label_left'>
-                            <h4>{item.name}</h4>
-                            <div className='type_button' style={{color: `${color}`}}>{type}</div>
-                            </div>
+                            <div className ='list_name'>{item.name}</div>
+                              { 
+                                item.types.map(type =>{return(<div className='type_button' style={{color: `${color}`}}>{type.type.name}</div>)})
+                              }</div>
+                          
                             <div className='list_label_right'>
+                            <div className='list_number' style={{color: `${color}`}}>{item.id}</div>
                             <img className='page_picture' src={item.sprites.other.dream_world.front_default} alt="" />
                             </div>
                             </div>
