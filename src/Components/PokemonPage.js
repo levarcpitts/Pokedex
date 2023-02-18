@@ -66,9 +66,9 @@ const getColor=(item)=> {
               keyboard={false} 
               animation={true}
             >
-              <Modal.Header className=''>
+              <div className='modal-header'>
               <div className='pokemon-name' style={{color: `${getColor(data)}`}}>{data.name}</div>
-              </Modal.Header>
+              </div>
               <div className='whole-modal'>
               <div className='modal_pop_out'  style={{backgroundColor: `${getColor(data)}`}}>
                 <div className='type-container'>

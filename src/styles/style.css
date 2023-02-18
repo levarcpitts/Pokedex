@@ -23,6 +23,7 @@
     
     
     
+    
 }
 .pokemon-number {
     background-color: white;
@@ -147,13 +148,14 @@ justify-content: center;
 .modal-header {
     height: 100px;
     border: none !important;
+    background-color: white;  
 }
 .stat-card{
     border-radius: 40px;
     background-color: white;
     width: 510px;
     height: 400px;
-    box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.07);
+    box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.1);
     position: absolute;
     bottom: -250px;
     right: -4px;
@@ -166,7 +168,7 @@ justify-content: center;
    border-radius: 40px; 
    overflow:hidden;
    border: none;
-   box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.06);
+   box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.1);
 
 
 }
