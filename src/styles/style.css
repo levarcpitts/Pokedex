@@ -3,19 +3,69 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
 .list_name {
-    font-family: 'Dosis', sans-serif;
     color: white;
     position: relative;
     top: 10px;
     font-size: 30px;
 }
 
+.pokemon-name {
+    font-size: 60px;
+    color: white;
+    grid-area: pokemon-name;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+.pokemon-number {
+    height: 80px;
+    width: 80px;
+    grid-area: pokemon-number;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 380px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 50px;
+}
+
+ .modal_pop_out{ 
+    height: 500px;
+    display: grid; 
+    grid-template-columns: 1.4fr; 
+    grid-template-rows: 0.3fr 0.7fr 0.5fr 2.5fr; 
+    gap: 15px 15px; 
+    grid-template-areas: 
+      "back-button-container"
+      "pokemon-name"
+      "type-container"
+      "."; 
+      border-radius: 40px;
+ }
+
+ .back-button-container {
+    grid-area: back-button-container;
+    height: 10px;
+    width: 10px;
+    color: white;;
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    font-weight: bold;
+    font-size: 30px;
+ }
+ 
+ 
+
+
+
+
 .list_number{
-font-family: 'Dosis', sans-serif;
 background-color: white;
 height: 30px;
 width: 30px;
@@ -44,10 +94,55 @@ padding: 3px
     border-radius: 40px;
     text-align: center;
     padding: 1px;
-    font-family: 'Dosis', sans-serif;
     font-weight: bold;
-    margin-top: 5px;
-    
+    margin-top: 5px; 
+}
+.type-container {
+    display: flex;
+    grid-area: type-container;
+    position: absolute;
+   top: 80px;
+   left: 10px;
+   
+   
+}
+
+.type_button_card {
+height:30px;
+width:60px;
+background-color: white;
+position: relative;
+top: 20px;
+border-radius: 40px;
+padding-bottom: 7px;
+font-weight: bold;
+font-size: 20px;
+margin-top: 15px;
+margin-right: 10px;
+display: flex;
+justify-content: center;
+
+}
+
+.stat-card{
+    border-radius: 20px;
+    background-color: white;
+    width: 500px;
+    box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.24);
+    position: absolute;
+    bottom: -200px;
+}
+
+
+.whole-modal{
+   box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.24);
+}
+
+.main-pic{
+    width: 50%;
+    position: absolute;
+ left: 100px;
+top: -200px;
 }
 .list_label {
     width: 300px;
@@ -150,7 +245,7 @@ padding: 3px
 .btn-group{
     display: flex;
 }
-.btn-group button{
+.btn-right button{
     outline: none;
     border: none;
     width: 60px;
@@ -163,5 +258,24 @@ padding: 3px
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 350px
+}
 
+.btn-left button{
+outline: none;
+border: none;
+width: 60px;
+height: 60px;
+padding: 0.3rem 0;
+margin: 1rem;
+font-size: 17px;
+font-weight: bold;
+color: white;
+background-color: white;
+border-radius: 50%;
+box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+position: fixed;
+left: 300px;
+top: 350px
 }

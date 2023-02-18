@@ -48,16 +48,16 @@ const handleShow = () => setShow(true);
   return (
     <>
     <div className='container'>
-     
+      <div className='btn-left'>
+    {  prevPageUrl && <button onClick={()=>{
+     setPokemon([])
+     setcurrentPageUrl(prevPageUrl) 
+ }}><img src={arrow} id='page_button' className='prev_button' /></button>}
+     </div>
       <div className='left-content' onClick={handleShow} > 
      <PokemonList pokemon={pokemon} loading={loading} infoPokemon={poke=>setPokeDex(poke)} />
      </div>
-     <div className="btn-group">
-                        {  prevPageUrl && <button onClick={()=>{
-                            setPokemon([])
-                            setcurrentPageUrl(prevPageUrl) 
-                        }}><img src={arrow} id='page_button' className='prev_button' /></button>}
-
+     <div className="btn-right">
                         { nextPageUrl && <button onClick={()=>{
                             setPokemon([])
                             setcurrentPageUrl(nextPageUrl)
