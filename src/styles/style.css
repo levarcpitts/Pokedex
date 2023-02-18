@@ -18,20 +18,22 @@
     color: white;
     grid-area: pokemon-name;
     position: absolute;
-    top: 30px;
-    left: 10px;
+    
+    
+    
 }
 .pokemon-number {
-    height: 80px;
-    width: 80px;
-    grid-area: pokemon-number;
     background-color: white;
+    height: 60px;
+    width: 60px;
+    grid-area: pokemon-number;
     position: absolute;
     top: 30px;
-    left: 380px;
-    border-radius: 50%;
+    left: 415px;
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
+    border-radius: 50%;
+    padding: 4px;
 }
 
  .modal_pop_out{ 
@@ -44,9 +46,24 @@
       "back-button-container"
       "pokemon-name"
       "type-container"
-      "."; 
-      border-radius: 40px;
+      ".";   
+      border-top: 0 none;
+
+
  }
+
+.modal-body{
+    border: none;
+    overflow: hidden;
+}
+
+ .modal-wrapper{
+    width: 400px;
+    height: 800px;
+    border: none;
+}
+
+
 
  .back-button-container {
     grid-area: back-button-container;
@@ -58,6 +75,7 @@
     top: 0px;
     font-weight: bold;
     font-size: 30px;
+    cursor: pointer
  }
  
  
@@ -108,15 +126,15 @@ padding: 3px
 }
 
 .type_button_card {
-height:30px;
-width:60px;
+height:60px;
+width: 120px;
 background-color: white;
 position: relative;
 top: 20px;
-border-radius: 40px;
+border-radius: 60px;
 padding-bottom: 7px;
 font-weight: bold;
-font-size: 20px;
+font-size: 35px;
 margin-top: 15px;
 margin-right: 10px;
 display: flex;
@@ -124,18 +142,31 @@ justify-content: center;
 
 }
 
+.modal-header {
+    height: 100px;
+    border: none !important;
+}
 .stat-card{
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: white;
-    width: 500px;
-    box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.24);
+    width: 510px;
+    height: 400px;
+    box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.07);
     position: absolute;
-    bottom: -200px;
+    bottom: -250px;
+    right: -4px;
 }
 
-
+.modal-content{
+    background-color: black;
+}
 .whole-modal{
-   box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.24);
+   border-radius: 40px; 
+   overflow:hidden;
+   border: none;
+   box-shadow: -4px 1px 16px 21px rgba(0,0,0,0.06);
+
+
 }
 
 .main-pic{
@@ -279,3 +310,70 @@ position: fixed;
 left: 300px;
 top: 350px
 }
+
+.pokemon-stats {  display: grid;
+    grid-template-columns: 100px 310px 100px;
+    grid-template-rows: 50px;
+    gap: 1px 1px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "stat-name guage-background stat_number";
+  }
+  
+  .guage-background {  display: grid;
+    grid-template-columns: 0.1fr 3fr 0.1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 30px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". guage ."
+      ". . .";
+    grid-area: guage-background;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    left: 145px;
+  }
+  
+  .guage { 
+    grid-area: guage;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    right: 20px
+
+ }
+  
+  .stat-name { 
+    grid-area: stat-name; 
+    position: relative;
+    left: 10px;
+    color: white;
+    height: 30px;
+    width: 110px;
+    text-align: center;
+    border-radius: 40px;
+    font-size: 15px;
+    padding: 3px;
+}
+  
+  .stat-number { 
+    grid-area: stat_number; 
+    position: relative;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+
+}
+
+  .stat-div{
+    position: relative;
+    top: 90px;
+  }
+  
