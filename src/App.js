@@ -3,7 +3,6 @@ import './App.css';
 import PokemonList from './Components/PokemonList';
 import PokemonPage from './Components/PokemonPage';
 import axios from 'axios';
-import { Modal } from 'react-bootstrap';
 import './styles/style.css'
 import arrow from './images/pagearrow.png'
 
@@ -75,3 +74,5 @@ const handleShow = () => setShow(true);
 }
 
 export default App;
+
+

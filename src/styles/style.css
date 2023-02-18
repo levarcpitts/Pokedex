@@ -15,16 +15,14 @@
 }
 
 .pokemon-name {
-    font-size: 60px;
+    font-size: 55px;
     color: white;
     grid-area: pokemon-name;
-    position: absolute;
-    padding-bottom: 30px;
-    
-    
-    
+    height: 90px;
+    border-radius: 60px;  
     
 }
+
 .pokemon-number {
     background-color: white;
     height: 60px;

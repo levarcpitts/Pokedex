@@ -1,10 +1,31 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button';
 import '../styles/style.css'
-import { ModalFooter } from 'react-bootstrap';
+import { 
+  createBrowserRouter, 
+  createRoutesFromElements, 
+  Route,
+  RouterProvider
+} from 'react-router-dom'
+
+import PokemonStats from './PokemonStats'
+import Evolutions from './Evolutions'
+
+
+
+
+
 
 export default function PokemonPage({data, show, handleClose}) {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        <Route  element={<PokemonStats data={data}/>} />
+        <Route index element={<Evolutions data={data}/>}/>
+      </Route>
+    )
+  )
 
   if(!show){
     return null
@@ -67,7 +88,7 @@ const getColor=(item)=> {
               animation={true}
             >
               <div className='modal-header'>
-              <div className='pokemon-name' style={{color: `${getColor(data)}`}}>{data.name}</div>
+              <div className='pokemon-name' style={{backgroundColor: `${getColor(data)}`}}>{data.name}</div>
               </div>
               <div className='whole-modal'>
               <div className='modal_pop_out'  style={{backgroundColor: `${getColor(data)}`}}>
@@ -82,37 +103,14 @@ const getColor=(item)=> {
                 <div className='stat-card'>   
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/
 other/dream-world/${data.id}.svg`} alt="" className='main-pic'/>
-<div className='stat-div'>
-                   {
-                        data.stats.map(poke=>{
-                            return(
-                                <>
-                                    <div className='pokemon-stats'>
-                                      <div className='stat-name'  style={{backgroundColor: `${getColor(data)}`}}>
-                                      {poke.stat.name}
-                                      </div>
-                                      <div className='guage-background'  style={{backgroundColor: `${getColor(data)}`}}>
-                                        <div className='guage' style={{width: `${poke.base_stat * 1.1}px`}}/>
-                                      </div>
-                                      <div className='stat-number' style={{backgroundColor: `${getColor(data)}`}}>
-                                      {poke.base_stat}
-                                      </div>
-                                    </div>
-                                </>
-                            )
-                        })
-                    }
-               </div>
+<RouterProvider router={router} data={data}/>
                 </div>
                 </div>
-                </div>
-                
-                
+                </div> 
               </Modal>
             </>
         )
     }
-
     </>
 )
 }
