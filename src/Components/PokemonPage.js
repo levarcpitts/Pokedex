@@ -10,6 +10,7 @@ import {
 
 import PokemonStats from './PokemonStats'
 import Evolutions from './Evolutions'
+import About from './About'
 
 
 
@@ -20,9 +21,10 @@ export default function PokemonPage({data, show, handleClose}) {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
+      <Route >
         <Route  element={<PokemonStats data={data}/>} />
-        <Route index element={<Evolutions data={data}/>}/>
+        <Route  element={<Evolutions data={data}/>}/>
+        <Route index element={<About data={data}/>}/>
       </Route>
     )
   )

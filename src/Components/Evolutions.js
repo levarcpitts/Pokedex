@@ -4,7 +4,7 @@ import axios from 'axios'
 export default function Evolutions({data}) {
 
     const getForms=async()=>{
-    const res = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/1/`);
+    const res = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${data.id}/`);
     console.log(res.data.chain.evolves_to[0].species)
     console.log(res.data.chain.evolves_to[0].evolves_to[0].species)
     }
